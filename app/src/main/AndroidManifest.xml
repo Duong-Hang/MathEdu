@@ -13,6 +13,36 @@
         android:theme="@style/Theme.MathEDu"
         tools:targetApi="31">
         <activity
+            android:name=".HS.Xephang"
+            android:exported="false" />
+        <activity
+            android:name=".HS.History"
+            android:exported="false" />
+        <activity
+            android:name=".HS"
+            android:exported="false" />
+        <activity
+            android:name=".PH.Baocao"
+            android:exported="false" />
+        <activity
+            android:name=".PH.Notification"
+            android:exported="false" />
+        <activity
+            android:name=".PH.Update"
+            android:exported="false" />
+        <activity
+            android:name=".PH.ChangePass"
+            android:exported="false" />
+        <activity
+            android:name=".Login.QuenPass"
+            android:exported="false" />
+        <activity
+            android:name=".PH.TKHs"
+            android:exported="false" />
+        <activity
+            android:name=".PH.HomePH"
+            android:exported="false" />
+        <activity
             android:name=".Login.DangNhap"
             android:exported="false" />
         <activity
