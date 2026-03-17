@@ -45,4 +45,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation(platform("com.google.firebase:firebase-bom:34.10.0"))
     implementation("com.google.firebase:firebase-auth")
+    implementation ("com.google.firebase:firebase-firestore")
+    implementation ("com.github.bumptech.glide:glide:5.0.5")
+    implementation("com.google.firebase:firebase-messaging:25.0.1")
 }

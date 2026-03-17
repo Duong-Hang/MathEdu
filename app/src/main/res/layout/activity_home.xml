@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img_7"
+    tools:context=".PH.Home">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imgbtnql"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/img_9" />
+
+            <ImageView
+                android:id="@+id/imgavatar"
+                android:layout_width="wrap_content"
+                android:layout_height="129dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/img_8" />
+
+            <ImageButton
+                android:id="@+id/imgbtntb"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitCenter"
+                android:background="@null"
+                app:srcCompat="@drawable/img_10" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="199dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btnph"
+            android:padding="15dp"
+            android:text="Username"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <!--tao tai khoan-->
+        <LinearLayout
+            android:id="@+id/lntkhs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnph"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Tạo tài khoản"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/img_11" />
+        </LinearLayout>
+
+        <!--Cập nhật thông tin-->
+        <LinearLayout
+            android:id="@+id/lnupdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnph"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Cập nhật thông tin"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/img_12" />
+        </LinearLayout>
+
+        <!--Báo cáo thống kê-->
+        <LinearLayout
+            android:id="@+id/lnbaocao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnph"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Báo cáo thống kê"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/img_13" />
+        </LinearLayout>
+
+        <!--Lịch sử làm bài-->
+        <LinearLayout
+            android:id="@+id/lnhistory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnph"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Lịch sử làm bài"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/img_14" />
+        </LinearLayout>
+
+        <!--Xếp hạng học tập-->
+        <LinearLayout
+            android:id="@+id/lnxephang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnph"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Xếp hạng học tập"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/img_15" />
+        </LinearLayout>
+
+        <!--Đổi mật khẩu-->
+        <LinearLayout
+            android:id="@+id/lnchangepass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnph"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Đổi mật khẩu"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView8"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/img_16" />
+        </LinearLayout>
+
+        <!--Đăng xuất-->
+        <LinearLayout
+            android:id="@+id/lndangxuat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/btnph"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="234dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Đăng xuất"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="wrap_content"
+                android:layout_height="51dp"
+                app:srcCompat="@drawable/img_17" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
