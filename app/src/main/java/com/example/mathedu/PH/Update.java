@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.mathedu.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,13 +38,13 @@ import java.util.Map;
 public class Update extends AppCompatActivity {
     Button btnxacnhan,btnavatar;
     EditText edtname,edtemail;
-    TextView txtql;
     ImageButton avatar1,avatar2,avatar3,avatar4,avatar5,avatar6,btnql;
     CardView Cardavatar;
     MaterialCardView Cardtt;
     ImageView imgavatar;
     FirebaseUser user;
     FirebaseFirestore db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,17 +76,7 @@ public class Update extends AppCompatActivity {
        db = FirebaseFirestore.getInstance();
         //lay avatar cu
         loadavatar();
-        //tu dong dien ten
-        if (user != null) {
-            Intent intent=getIntent();
-            String name= intent.getStringExtra("name");
-            edtname.setText(name);
-            //email
-            String email = user.getEmail();
-            if (email != null) {
-                edtemail.setText(email);
-            }
-        }
+
         //quay lai
        btnql.setOnClickListener(v->{
             if(Cardavatar.getVisibility()==CardView.VISIBLE){
@@ -95,49 +87,11 @@ public class Update extends AppCompatActivity {
                 finish();
             }
        });
-        //xac nhan
-        btnxacnhan.setOnClickListener(view -> {
-            String name=edtname.getText().toString();
-            String email=edtemail.getText().toString();
-            FirebaseFirestore db= FirebaseFirestore.getInstance();
-            //dat lai ten
-            UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
-                    .setDisplayName(name)
-                    .build();
-
-            user.updateProfile(profileUpdates)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(Update.this, "Cập nhật thông tin thành công", Toast.LENGTH_SHORT).show();
-                                db.collection("Users").document(user.getUid()).update("hoten",name);
-                            }
-                            else{
-                                Toast.makeText(Update.this, "Cập nhật thông tin thất bại", Toast.LENGTH_SHORT).show();
-                                Log.e("Error",task.getException().getMessage());
-                            }
-                        }
-                    });
-
-            //dat lai email
-
-            user.updateEmail(email)
-                    .addOnCompleteListener(new OnCompleteListener<Void>() {
-                        @Override
-                        public void onComplete(@NonNull Task<Void> task) {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(Update.this, "Cập nhật thông tin thành công", Toast.LENGTH_SHORT).show();
-                                db.collection("Users").document(user.getUid()).update("email",email);
-                            }
-                            else {
-                                Toast.makeText(Update.this, "Cập nhật thông tin thất bại", Toast.LENGTH_SHORT).show();
-                                Log.e("Error",task.getException().getMessage());
-                            }
-                        }
-                    });
-
+       //xac nhan
+        btnxacnhan.setOnClickListener(v->{
+            updateph();
         });
+
         //thay doi avatar
         btnavatar.setOnClickListener(v->{
             Cardavatar.setVisibility(CardView.VISIBLE);
@@ -152,6 +106,59 @@ public class Update extends AppCompatActivity {
         avatar6.setOnClickListener(view -> Selectavatar(R.drawable.avatar6,"avatar6"));
 
 
+    }
+
+    private void updateph() {
+        //tu dong dien ten
+        if (user != null) {
+            Intent intent=getIntent();
+            String name= intent.getStringExtra("name");
+            edtname.setText(name);
+            //email
+            String email = user.getEmail();
+            if (email != null) {
+                edtemail.setText(email);
+            }
+        }
+        //lu du lieu
+        String name=edtname.getText().toString();
+        String email=edtemail.getText().toString();
+        //dat lai ten
+        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                .setDisplayName(name)
+                .build();
+
+        user.updateProfile(profileUpdates)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Update.this, "Cập nhật thông tin thành công", Toast.LENGTH_SHORT).show();
+                            db.collection("Users").document(user.getUid()).update("hoten",name);
+                        }
+                        else{
+                            Toast.makeText(Update.this, "Cập nhật thông tin thất bại", Toast.LENGTH_SHORT).show();
+                            Log.e("Error",task.getException().getMessage());
+                        }
+                    }
+                });
+
+        //dat lai email
+
+        user.updateEmail(email)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(Update.this, "Cập nhật thông tin thành công", Toast.LENGTH_SHORT).show();
+                            db.collection("Users").document(user.getUid()).update("email",email);
+                        }
+                        else {
+                            Toast.makeText(Update.this, "Cập nhật thông tin thất bại", Toast.LENGTH_SHORT).show();
+                            Log.e("Error",task.getException().getMessage());
+                        }
+                    }
+                });
     }
 
     private void loadavatar() {
