@@ -112,7 +112,6 @@ public class TKHs extends AppCompatActivity {
                         Toast.makeText(TKHs.this, "Tạo tài khoản thất bại", Toast.LENGTH_SHORT).show();
                         Log.e("Error",v.getMessage());
                     });
-
         }
     }
     private void Checkten(){

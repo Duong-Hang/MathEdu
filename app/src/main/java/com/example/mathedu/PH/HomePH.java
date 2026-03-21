@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HomePH extends AppCompatActivity {
-    LinearLayout lntkhs,lnupdate,lnbaocao,lnhistory,lnxephang,lnchangepass,lndangxuat;
+    LinearLayout lntkhs,lnupdate,lnbaocao,lnhistory,lnxephang,lnchangepass,lndangxuat,lnxem;
     ImageButton imgbtnql,imgbtntb;
     ImageView imgavatar;
     TextView tvname;
@@ -58,6 +58,7 @@ public class HomePH extends AppCompatActivity {
         lntkhs=findViewById(R.id.lntkhs);
         imgavatar=findViewById(R.id.imgavatar);
         tvname=findViewById(R.id.tvname);
+        lnxem=findViewById(R.id.lnxem);
         //show infor
         showinfor();
         //tạo tài khoản học sinh
@@ -91,6 +92,11 @@ public class HomePH extends AppCompatActivity {
         lnupdate.setOnClickListener(view -> {
             Intent myintent=new Intent(HomePH.this,Update.class);
             myintent.putExtra("name",name);
+            startActivity(myintent);
+        });
+        //xem danh sach
+        lnxem.setOnClickListener(view -> {
+            Intent myintent=new Intent(HomePH.this, ListHS.class);
             startActivity(myintent);
         });
         //bao cao thong ke

@@ -48,6 +48,7 @@ public class Flash extends AppCompatActivity {
                                         if (role.equals("Phụ huynh")) {
                                             Intent myintents = new Intent(Flash.this, HomePH.class);
                                             startActivity(myintents);
+                                            finish();
                                         }
                                     }
                                     //neu ko tim thay trong user thi chuyen sang collection students
@@ -58,6 +59,7 @@ public class Flash extends AppCompatActivity {
                                                             if(documentSnapshot1.exists()){
                                                                 Intent myintent = new Intent(Flash.this, MainActivity.class);
                                                                 startActivity(myintent);
+                                                                finish();
                                                             }
                                                         }
                                                 )
